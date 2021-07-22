@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="All Test Suite" parallel="false">
+    <test name="Android">
+        <listeners>
+            <listener class-name="com.qa.listeners.TestListener" />
+        </listeners>
+        <parameter name="platformName" value="Android"></parameter>
+        <parameter name="platformVersion" value="10.0"></parameter>
+        <parameter name="deviceName" value="samsung .*"></parameter>
+
+        <parameter name="systemPort" value="10000"></parameter>
+        <parameter name="chromeDriverPort" value="11000"></parameter>
+        <classes>
+            <class name="com.qa.tests.ProductTests2">
+<!--                <methods>-->
+<!--                    <include name="successfulLogin"></include>-->
+<!--                </methods>-->
+            </class>
+        </classes>
+    </test>
+<!--    <test name="Android1">-->
+<!--        <listeners>-->
+<!--            <listener class-name="com.qa.listeners.TestListener"></listener>-->
+<!--        </listeners>-->
+<!--        <parameter name="platformName" value="Android"></parameter>-->
+<!--        <parameter name="platformVersion" value="11.0"></parameter>-->
+<!--        <parameter name="deviceName" value="Pixel 3"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.qa.tests.ProductTests2">-->
+<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="successfulLogin"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
