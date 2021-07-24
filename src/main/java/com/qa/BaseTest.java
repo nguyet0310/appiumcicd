@@ -94,7 +94,8 @@ public class BaseTest {
     @BeforeSuite
     public void beforeSuite() {
         ThreadContext.put("ROUTINGKEY", "ServerLogs");
-        server = getAppiumServerDefault();
+//        server = getAppiumServerDefault();
+        server = getAppiumService2();
         if(!server.isRunning()){
             server.start();
             server.clearOutPutStreams();
@@ -114,11 +115,12 @@ public class BaseTest {
     public AppiumDriverLocalService getAppiumServerDefault() {
         return AppiumDriverLocalService.buildDefaultService();
     }
+
     // TODO: not complete yet, wait until work with MAC machine
-    public AppiumDriverLocalService getAppiumService() {
+    public AppiumDriverLocalService getAppiumService2() {
         HashMap<String, String> environment = new HashMap<>();
-        environment.put("PATH", "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:/Users/omprakashchavan/Library/Android/sdk/tools:/Users/omprakashchavan/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin" + System.getenv("PATH"));
-        environment.put("ANDROID_HOME", "/Users/omprakashchavan/Library/Android/sdk");
+        environment.put("PATH", "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Azure Data Studio\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\apache-maven-3.8.1\\bin;C:\\Users\\nguyetnm\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Windows\\System32\\cmd.exe;C:\\Program Files\\PostgreSQL\\11\\bin;C:\\Program Files\\Java\\jdk1.8.0_281\\bin;C:\\Users\\nguyetnm\\.dotnet\\tools;C:\\Users\\nguyetnm\\AppData\\Roaming\\npm;C:\\Users\\nguyetnm\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\nguyetnm\\AppData\\Local\\Android\\Sdk\\tools;C:\\Users\\nguyetnm\\AppData\\Local\\Android\\Sdk\\tools\\bin;C:\\tmp\\apache-maven-3.8.1\\bin;C:\\Users\\nguyetnm\\Downloads\\Compressed\\ffmpeg-4.4-full_build\\bin;C:\\Users\\nguyetnm\\Downloads\\Compressed\\Bento4-SDK-1-6-0-638.x86_64-microsoft-win32\\bin;C:\\Users\\nguyetnm\\Downloads\\Compressed\\aria2-1.35.0-win-64bit-build1;C:\\Users\\nguyetnm\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\nguyetnm\\Downloads\\Compressed\\curl-7.77.0-win64-mingw\\bin;C:\\Users\\nguyetnm\\Downloads\\Compressed\\gradle-5.6.4\\bin" + System.getenv("PATH"));
+        environment.put("ANDROID_HOME", "C:\\Users\\nguyetnm\\AppData\\Local\\Android\\Sdk");
         return AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
                 .usingDriverExecutable(new File("C:\\Program Files\\nodejs\\node.exe"))
                 .withAppiumJS(new File("C:\\Users\\nguyetnm\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
